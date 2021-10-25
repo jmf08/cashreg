@@ -1,0 +1,33 @@
+body{
+background-image: url("GrayBG.jpg");
+background-repeat: repeat;
+background-position: center;
+background-size: cover;
+height: 100%;
+color: white;
+}
+
+a{
+color: white;
+}
+
+a:hover{
+color: white;
+background-color: blue;
+}
+
+.cashreg{width: 80%;
+height: 100%;
+background-color: #666699;
+box-shadow: 3px 3px black;
+}
+
+.dropdown-menu {display: none;
+position: absolute;
+background-color: #666699;
+border-radius: 2px;
+border: 4px solid black;
+min-width: 160px;
+bottom: 50px;
+z-index: 1;
+}

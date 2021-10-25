@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/722c5ad8e3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Add Inventory 5.css">
+    <title>Inventory Form</title>
+</head>
+<script src="Add Inventory 5.js"></script>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <ul class="navbar-nav">
+            <li class="navbar-brand">
+                <img src = "Yoshikage Kira.png" alt="Logo" width="50px;">
+            </li>
+            <li class="navbar-brand">
+                Inventory and Cash Register
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Inventory 4.html">Inventory</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Cash Register 3.html">Cash Register</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="Log-in 1.html">Log Out</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col" id="col1">
+                <form name="addinvitem">
+                    <div class = "invform">
+                        <h4 class="form-inline justify-content-center p-4">Add Item Form:</h4>
+                        <div class = "form-inline p-4">
+                            <label for = "Item Name">Item Name:</label>
+                            <input type = "text" class="ml-auto" id = "Item Name" name = "Item Name"><br>
+                        </div>
+                        <div class = "form-inline p-4">
+                            <label for = "Product Code">Product Code:</label>
+                            <input type = "text" class="ml-auto" id = "Product Code" name = "Product Code"><br>
+                        </div>
+                        <div class = "form-inline p-4">
+                            <label for = "Stocks">Stocks:</label>
+                            <input type = "text" class="ml-auto" id = "Stocks" onkeypress="return isNumber(event)" name = "Stocks"><br>
+                        </div>
+                        <div class = "form-inline p-4">
+                            <label for = "Price">Price (₱):</label>
+                            <input type = "text" class="ml-auto" id = "Price" onkeypress="return isNumber(event)" name = "Price"><br>
+                        </div>
+                        <div class = "form-inline p-4">
+                            <button type = "submit" class="ml-auto" onclick="addinv(); return false">Submit Item</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

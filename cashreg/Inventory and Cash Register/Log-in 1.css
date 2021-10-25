@@ -1,0 +1,31 @@
+body{text-align: center;
+background-image: url("GrayBG.jpg");
+background-repeat: repeat;
+background-position: center;
+background-size: cover;
+height: 100%;
+color: white;
+}
+
+.rounded-circle{margin-top: 10%;}
+
+h3{margin-top: 10%;
+text-shadow: 2px 2px black;
+}
+
+.login{width: 500px;
+height: 800px;
+background-color: #666699;
+box-shadow: 3px 3px black;
+border: 2px solid;
+border-color: #b3b3b3;
+border-radius: 25px;
+}
+
+#loginbutton{margin-left: 40%;
+width: 17%;
+}
+
+#signupbutton{margin-left: 40%;
+width: 17%;
+}
