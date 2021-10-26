@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,15 +10,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/722c5ad8e3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Log-in 1.css">
+    <link rel="stylesheet" type="text/css" href="{% static '/CSS/Log-in 1.css' %}">
+    <body style="background-image: url('{% static "Media/GrayBG.jpg"%}');">
     <title>Inventory and Cash Register</title>
 </head>
-<script src="Log-in 1.js"></script>
 <body>
     <div class="containter-lg p-5 mt-3">
         <div class="row justify-content-center">
                 <div class="login">
-                    <img src="Yoshikage Kira.png" class="rounded-circle" alt="Kira" width="60%">
+                    <img src="{% static 'Media/Yoshikage Kira.png' %}" class="rounded-circle" alt="Kira" width="60%">
                     <h3><b>Inventory and Cash Register</b></h3>
                     <h3><b>Member Login</b></h3>
                         <form name="memberlogin">
@@ -29,12 +31,11 @@
                                 <input type="password" class="ml-4" name="Password" id="Password" placeholder="Enter Password" value="" autofocus>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-dark" id="loginbutton" type="submit" onclick="enterPassword(); return false">Log In</button>
+                                <a class="btn btn-dark" id="loginbutton" type="button" href="/CashRegister">Log In</a>
                             </div>
-                        </form>
-
-                        <form action="Create New Account 2.html">
-                            <button class="btn btn-dark" id="signupbutton" type="submit">Sign Up</button>
+                            <div class="form-group">
+                                <a class="btn btn-dark" href="/Signup" id="signupbutton" type="button">Sign Up</a>
+                            </div>
                         </form>
                 </div>
         </div>
