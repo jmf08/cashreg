@@ -1,6 +1,5 @@
-<?php
-    require_once ("dbConnection.php");
-?>
+{% load static %}
+
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
@@ -10,7 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/722c5ad8e3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CashRegIframe.css">
+    <link rel="stylesheet" type="text/css" href="{% static '/CSS/CashRegIframe.css' %}">
+    <body style="background-image: url('{% static "Media/GrayBG.jpg"%}');">
     <title>Cash Register Table</title>
 </head>
 <body>
