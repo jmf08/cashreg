@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/722c5ad8e3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Create New Account 2.css">
+    <title>Sign Up</title>
+</head>
+<script src="Create New Account.js"></script>
+<body>
+    <div class="container-lg pt-5 mt-4">
+        <div class="row justify-content-center">
+            <div class="signup">
+                        <h3 class="signupsign">Sign Up</h3>
+                    <form name="signups">
+                        <div class="form-inline p-2">
+                            <label for="Full Name">Full Name:</label>
+                            <input type="text" name="First Name" id="First Name" class="form-control" style="width: 150px;" placeholder="First Name" onkeypress="return lettersOnly(event)">
+                            <input type="text" name="Last Name" id="Last Name" class="form-control" style="width: 150px;" placeholder="Last Name" onkeypress="return lettersOnly(event)">
+                        </div>
+                        <div class="form-inline p-2">
+                            <label for="Birth Date">Birth Date:</label>
+                            <input type="number" name="mm" id="mm" class="form-control" style="width: 55px;" placeholder="mm" onkeypress="return isNumber(event)" maxlength="2">
+                            <input type="number" name="dd" id="dd" class="form-control" style="width: 55px;" placeholder="dd" onkeypress="return isNumber(event)" maxlength="2">
+                            <input type="number" name="yyyy" id="yyyy" class="form-control" style="width: 60px;" placeholder="yyyy" onkeypress="return isNumber(event)" maxlength="4">
+                        </div>
+                        <div class="form-inline p-2">
+                            <label for="Place of Birth">Birth Place:</label>
+                            <input type="text" name="Place of Birth" id="birthplace" class="form-control" onkeypress="return lettersOnly(event)">
+                        </div>
+                        <div class="form-inline p-2">
+                            <label for="Username">Username:</label>
+                            <input type="text" name="Username" id="Username" class="form-control" value="">
+                        </div>
+                        <div class="form-inline p-2">
+                            <label for="Password">Password:</label>
+                            <input type="password" name="Password" id="Password" class="form-control" value="">
+                            <span class="text-danger" id="message"></span>
+                        </div>
+                        <div class="form-inline p-2">
+                            <label for="Confirm Password">Confirm Password:</label>
+                            <input type="password" name="Confirm Password" id="Confirm Password" class="form-control" value="">
+                        </div>
+                        <div class="signupbutton">
+                            <button class="btn btn-dark" style="width: 90px;" type="submit" onclick="getinfo(); return false">Sign Up</button>
+                        </div>
+                    </form>
+                    
+                    <form action="Log-in 1.html">
+                        <div class="cancel">
+                            <button class="btn btn-dark mt-2" style="width: 90px;" type="submit">Cancel</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
