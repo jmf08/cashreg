@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/722c5ad8e3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Cash Register 3.css">
+    <link rel="stylesheet" type="text/css" href="{% static '/CSS/Cash Register 3.css' %}">
+    <body style="background-image: url('{% static "Media/GrayBG.jpg"%}');">
     <title>Cash Register</title>
 </head>
 <script src="Cash Register 3.js"></script>
@@ -16,24 +19,18 @@
     <nav class="navbar navbar-expand-lg bg-dark">
         <ul class="navbar-nav">
             <li class="navbar-brand">
-                <img src = "Yoshikage Kira.png" alt="Logo" width="50px;">
+                <img src="{% static 'Media/Yoshikage Kira.png' %}" class="rounded-circle" alt="logo" width="50px;">
             </li>
             <li class="navbar-brand">
                 Inventory and Cash Register
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Inventory 4.html">Inventory</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="Summary 6.html">Summary of Items Bought</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="Sales 7.html">Sales</a>
+                <a class="nav-link" href="Inventory">Inventory</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="Log-in 1.html">Log Out</a>
+                <a class="nav-link" href="login">Log Out</a>
             </li>
         </ul>
     </nav>
@@ -106,7 +103,7 @@
                 </div>
             </div>       
             <div class="col-lg-6" id="col2">
-                <iframe src="CashRegIframe.html" class="responsive-iframe" style="border: 4px solid black"
+                <iframe src="CashRegIframe" class="responsive-iframe" style="border: 4px solid black"
                 allowtransparency="true" height="100%" width="100%" title="Cash Register Table"></iframe>
                 <button onclick="window.location.href=''" class="btn btn-dark float-right">Reset</button></td>
             </div>
