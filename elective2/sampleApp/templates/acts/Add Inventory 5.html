@@ -14,7 +14,7 @@
     <body style="background-image: url('{% static "Media/GrayBG.jpg"%}');">
     <title>Inventory Form</title>
 </head>
-<script src="Add Inventory 5.js"></script>
+<script src="C:\Users\Daryl PC\Desktop\elective2\sampleApp\static\js\Cash Register 3.js"></script>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark">
         <ul class="navbar-nav">
@@ -25,42 +25,48 @@
                 Inventory and Cash Register
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Inventory">Inventory</a>
+                <a class="nav-link" href="{% url 'inventory' %}">Inventory</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="CashRegister">Cash Register</a>
+                <a class="nav-link" href="{% url 'CashRegister' %}">Cash Register</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="login">Log Out</a>
+                <a class="nav-link" href="{% url 'Login' %}">Log Out</a>
             </li>
         </ul>
     </nav>
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col" id="col1">
-                <form name="addinvitem">
+                <form name="addinvitem" method="post">
+                    
                     <div class = "invform">
+                        {% csrf_token %}
                         <h4 class="form-inline justify-content-center p-4">Add Item Form:</h4>
                         <div class = "form-inline p-4">
-                            <label for = "Item Name">Item Name:</label>
-                            <input type = "text" class="ml-auto" id = "Item Name" name = "Item Name"><br>
+                            <label for = "ItemName">Item Name:</label>
+                            <input type = "text" class="ml-auto" id = "ItemName" name = "ItemName"><br>
                         </div>
+                        {{form.Item}}
                         <div class = "form-inline p-4">
-                            <label for = "Product Code">Product Code:</label>
-                            <input type = "text" class="ml-auto" id = "Product Code" name = "Product Code"><br>
+                            <label for = "ProductCode">Product Code:</label>
+                            <input type = "text" class="ml-auto" id = "ProductCode" name = "ProductCode"><br>
                         </div>
+                        {{form}}
                         <div class = "form-inline p-4">
                             <label for = "Stocks">Stocks:</label>
                             <input type = "text" class="ml-auto" id = "Stocks" onkeypress="return isNumber(event)" name = "Stocks"><br>
                         </div>
+                        {{form}}
                         <div class = "form-inline p-4">
                             <label for = "Price">Price (₱):</label>
                             <input type = "text" class="ml-auto" id = "Price" onkeypress="return isNumber(event)" name = "Price"><br>
                         </div>
+                        {{form}}
                         <div class = "form-inline p-4">
-                            <button type = "submit" class="ml-auto" onclick="addinv(); return false">Submit Item</button>
+                            <button type = "submit" class="ml-auto" onclick="addinv(); return f">Submit Item</button>
                         </div>
                     </div>
                 </form>
