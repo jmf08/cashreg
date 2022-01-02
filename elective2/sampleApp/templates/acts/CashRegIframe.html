@@ -21,9 +21,20 @@
                 <td>Item Name</td>
                 <td>Quantity</td>
                 <td>Price</td>
-                <td></td>
+                
             </tr>
         </thead>
+        <tbody>
+            {% for cashreg2 in datas2 %}
+            <tr>
+            <td>{{ cashreg2.ProductCode2}}</td>
+            <td>{{ cashreg2.ItemName2 }}</td>
+            <td>{{ cashreg2.Quantity2 }}</td>
+            <td>{{ cashreg2.Price2 }}</td>
+            <td><a href="{% url 'delete2' cashreg2.id %}" <button class="btn btn-dark" type="button"> Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
     <table class="table table-bordered table-dark table-hover">
         <thead>
@@ -34,5 +45,16 @@
                 <td>Date and Time</td>
             </tr>
         </thead>
+         <tbody>
+            {% for cashreg3 in datas3 %}
+            <tr>
+            <td>{{ cashreg3.Total3}}</td>
+            <td>{{ cashreg3.Cash3 }}</td>
+            <td>{{ cashreg3.Change3 }}</td>
+            <td>{{ cashreg3.Date3 }}</td>
+            <td><a href="{% url 'delete3' cashreg3.id %}" <button class="btn btn-dark" type="button"> Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 </body>
