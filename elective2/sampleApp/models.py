@@ -46,6 +46,8 @@ class cashreg5(models.Model):
     def __str__(self):
         return self.Total3 + " " + self.Date3
 
-
-
-    
+class login(models.Model):
+    Username = models.CharField(max_length=15)
+    Password = models.CharField(max_length=15)
+    def __str__(self):
+        return self.Username + self.Password
