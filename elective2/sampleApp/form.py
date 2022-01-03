@@ -1,6 +1,9 @@
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
 from django.db import models
 from django.forms import ModelForm
-from .models import cashreg1, cashreg2, cashreg3,cashreg4,cashreg5
+from .models import cashreg1, cashreg2, cashreg3,cashreg4,cashreg5,login
 
 class cr(ModelForm):
     class Meta:
@@ -26,3 +29,8 @@ class cr5(ModelForm):
     class Meta:
         model = cashreg5
         fields = ['Total3', 'Cash3','Change3']
+
+class CreateUser(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username','password1','password2']
