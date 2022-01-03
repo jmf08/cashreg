@@ -24,12 +24,12 @@
                 Inventory and Cash Register
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="CashRegister">Cash Register</a>
+                <a class="nav-link" href="{% url 'CashRegister' %}">Cash Register</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="login">Log Out</a>
+                <a class="nav-link" href="{% url 'Login' %}">Log Out</a>
             </li>
         </ul>
     </nav>
@@ -44,13 +44,25 @@
                         <th>Price</th>
                     </tr>
                 </thead>
+                <tbody>
+                {% for cashreg1 in datas %}
+                <tr>
+                    <td>{{ cashreg1.ItemName }}</td>
+                    <td>{{ cashreg1.ProductCode }}</td>
+                    <td>{{ cashreg1.Stocks }}</td>
+                    <td>{{ cashreg1.Price }}</td>
+<!--                     <td><button onclick=""class="btn btn-dark float-right">Delete Item</button></td>
+ -->                    <td><a href="{% url 'delete' cashreg1.id %}" <button class="btn btn-dark" type="button"> Delete</a></td>
+                    <td><a href="{% url 'update' cashreg1.id %}"<button class="btn btn-dark" type="button"> Update</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
             </table>
-            <textarea style="resize: none" rows="30" cols="205" disabled></textarea>
-        </div>
+<!--             <textarea style="resize: none" rows="30" cols="205" disabled></textarea>
+ -->        </div>
     </div>
     <div class="container-fluid">
-        <button class="btn btn-dark" type="submit">Delete Item</button>
-        <a href="Add Inventory"><button class="btn btn-dark" type="button">Add Item</button></a>
+        <a href="{% url 'AddInventory' %}"><button class="btn btn-dark" type="button">Add Item</button></a>
     </div>
 </body>
 </html>
