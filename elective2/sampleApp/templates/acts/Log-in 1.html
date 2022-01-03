@@ -21,20 +21,27 @@
                     <img src="{% static 'Media/Yoshikage Kira.png' %}" class="rounded-circle" alt="Kira" width="60%">
                     <h3><b>Inventory and Cash Register</b></h3>
                     <h3><b>Member Login</b></h3>
-                        <form name="memberlogin">
+                        <form name="memberlogin" method="POST">
+                            
                             <div class="form-group">
-                                <label for="Username">Username:</label>
-                                <input type="text" class="ml-4" name="Username" id="Username" placeholder="Enter Username" value="" autofocus>
+                                {% csrf_token %}
+                                <label for="username">Username:</label>
+                                <input type="text" class="ml-4" name="username" id="username" placeholder="Enter Username" value="" autofocus>
                             </div>
                             <div class="form-group">
-                                <label for="Password">Password:</label>
-                                <input type="password" class="ml-4" name="Password" id="Password" placeholder="Enter Password" value="" autofocus>
+                                {% csrf_token %}
+                                <label for="password">Password:</label>
+                                <input type="password" class="ml-4" name="password" id="password" placeholder="Enter Password" value="" autofocus>
+                            </div>
+                            {% for message in messages %}
+                            <p id="messages">{{message}}</p>
+                        {% endfor %}	    
+                            <div class="form-group">
+                                <input class="btn btn-dark" type="submit" value=" Login">
+                                
                             </div>
                             <div class="form-group">
-                                <a class="btn btn-dark" id="loginbutton" type="button" href="/CashRegister">Log In</a>
-                            </div>
-                            <div class="form-group">
-                                <a class="btn btn-dark" href="/Signup" id="signupbutton" type="button">Sign Up</a>
+                                <a class="btn btn-dark" href="{% url 'Signup' %}" type="button">Sign Up</a>
                             </div>
                         </form>
                 </div>
