@@ -42,7 +42,7 @@ def inventory(request):
 
    return render(request,'acts/Inventory 4.html', context)
 
-  
+@login_required(login_url='Login')  
 def Add_inventory(request):
       form1 = cr()
       if request.method == 'POST':
