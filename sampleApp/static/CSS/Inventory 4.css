@@ -1,0 +1,17 @@
+body{text-align: center;
+background-image: url("GrayBG.jpg");
+background-repeat: repeat;
+background-position: center;
+background-size: cover;
+height: 100%;
+color: white;
+}
+
+a{
+color: white;
+}
+
+a:hover{
+color: white;
+background-color: blue;
+}

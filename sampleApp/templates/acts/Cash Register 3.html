@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/722c5ad8e3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static '/CSS/Cash Register 3.css' %}">
+    <body style="background-image: url('{% static "Media/GrayBG.jpg"%}');">
+    <title>Cash Register</title>
+</head>
+<script src="C:\Users\Daryl PC\Desktop\elective2(nov20)\sampleApp\static\js\Add Inventory 5.js"></script>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <ul class="navbar-nav">
+            <li class="navbar-brand">
+                <img src="{% static 'Media/Yoshikage Kira.png' %}" class="rounded-circle" alt="logo" width="50px;">
+            </li>
+            <li class="navbar-brand">
+                Inventory and Cash Register
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'inventory' %}">Inventory</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-lg pt-5 mt-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-6" id="col1">
+                <div class="cashreg">
+                    <h4 class="form-inline justify-content-center p-2">Cash Register</h4>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="form-inline p-2">
+                            <label for="ProductCode2">Product Code:</label>
+                            <input type="text" name="ProductCode2" class="ml-auto" onkeypress="return isNumber(event)" value="" autofocus required>      
+                        </div>
+                        
+                        <div class="form-inline p-2">
+                            <label for="ItemName2">Item Name:</label>
+                            <input type="text" name="ItemName2" class="ml-auto" value="" autofocus required>
+                        </div>
+                        
+                        <div class="form-inline p-2">
+                            <label for="Quantity2">Quantity:</label>
+                            <input type="number" name="Quantity2" min="1" class="ml-auto" value="" required>
+                        </div>
+                        
+                        <div class="form-inline p-2">
+                            <label for="Price2">Price:</label>
+                            <input type="text" name="Price2" class="ml-auto w-50" value="" required>
+                        </div>
+                        <div class="form-inline p-2">
+                            <input type="submit" class="w-25 ml-auto" value="Enter">
+                        </div>
+                    </form>
+                    <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="form-inline p-2">
+                        <label for="Total3">Total:</label>
+                        <input type="text" name="Total3" class="ml-auto w-50" onkeypress="return isNumber(event)" value="" required>
+                    </div>
+                    <div class="form-inline p-2">
+                        <label for="Cash3">Cash:</label>
+                        <input type="text" name="Cash3" class="ml-auto w-50" onkeypress="return isNumber(event)" value="" required>
+                    </div>
+                    <div class="form-inline p-2">
+                        <label for="Change3">Change:</label>
+                        <input type="text" name="Change3" class="ml-auto w-50" onkeypress="return isNumber(event)" value="" required>
+                    </div>
+                    <div class="dropdown ml-2">
+                    <button type="button" class="btn dropdown-toggle bg-light" id="calcbutton" data-toggle="dropdown">
+                    Calculator
+                    </button>
+                    <div class="dropdown-menu p-2">
+                        <input type = "text" style="width: 90px;" name="calcu" value="" id="calcu" readonly>
+                        <input type = "button" value="C" onclick="clr()"><br>
+                        <input type = "button" value = "7" onclick="dis('7')">
+                        <input type = "button" value = "8" onclick="dis('8')">
+                        <input type = "button" value = "9" onclick="dis('9')">
+                        <input type = "button" value = "*" onclick="dis('*')"><br>
+                        <input type = "button" value = "4" onclick="dis('4')">
+                        <input type = "button" value = "5" onclick="dis('5')">
+                        <input type = "button" value = "6" onclick="dis('6')">
+                        <input type = "button" value = "/" onclick="dis('/')"><br>
+                        <input type = "button" value = "1" onclick="dis('1')">
+                        <input type = "button" value = "2" onclick="dis('2')">
+                        <input type = "button" value = "3" onclick="dis('3')">
+                        <input type = "button" value = "-" onclick="dis('-')"><br>					
+                        <input type = "button" value = "0" onclick="dis('0')">
+                        <input type = "button" value = "." onclick="dis('.')">
+                        <input type = "button" value = "+" onclick="dis('+')">						
+                        <input type = "button" value = "=" onclick="solve()"><br>
+                    </div>
+                    <input type="submit" class="w-25 float-right mr-2" value="Enter">
+                    </form>
+                    </div>       
+                </div>
+            </div>       
+            <div class="col-lg-6" id="col2">
+                <iframe src="CashRegIframe" class="responsive-iframe" style="border: 4px solid black"
+                allowtransparency="true" height="100%" width="100%" title="Cash Register Table"></iframe>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
